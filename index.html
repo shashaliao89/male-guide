@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>男性圖鑑 - 2025冬季下船指南</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif TC', 'Microsoft JhengHei', serif;
+            background: linear-gradient(135deg, #d4c4b0 0%, #b8a890 50%, #9d8b78 100%);
+            min-height: 100vh;
+            padding: 25px 15px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(91, 76, 60, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(107, 93, 79, 0.12) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 35px 30px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 18px;
+            margin-bottom: 35px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 15px 45px rgba(91, 76, 60, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        h1 {
+            color: #4a3d30;
+            font-size: 2.6em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 6px rgba(74, 61, 48, 0.15);
+        }
+
+        .subtitle {
+            color: #6b5d4f;
+            font-size: 1.1em;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 22px;
+            margin-bottom: 35px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 30px rgba(74, 61, 48, 0.18);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(139, 115, 85, 0.25);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #9d8b78, #b8a890, #8b7766);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 115, 85, 0.15) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 16px 50px rgba(74, 61, 48, 0.28);
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4c4b0, #c4b4a0);
+            color: #4a3d30;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(74, 61, 48, 0.15);
+        }
+
+        .card-title {
+            color: #3d3229;
+            font-size: 1.85em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .card-type {
+            display: inline-block;
+            background: rgba(184, 168, 144, 0.5);
+            color: #4a3d30;
+            padding: 5px 14px;
+            border-radius: 18px;
+            font-size: 0.82em;
+            margin-bottom: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(139, 115, 85, 0.35);
+        }
+
+        .card-description {
+            color: #5a4d3f;
+            line-height: 1.85;
+            margin-bottom: 16px;
+            font-size: 1.02em;
+        }
+
+        .card-stats {
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 2px solid rgba(139, 115, 85, 0.25);
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            margin-bottom: 11px;
+            font-size: 0.92em;
+        }
+
+        .stat-name {
+            color: #6b5d4f;
+            font-weight: 600;
+            min-width: 75px;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-bar {
+            flex: 1;
+            margin: 0 10px;
+            height: 20px;
+            background: linear-gradient(135deg, #e8e0d5, #d8d0c5);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(74, 61, 48, 0.15);
+        }
+
+        .stat-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #9d8b78, #b8a890, #8b7766);
+            border-radius: 10px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 6px rgba(139, 115, 85, 0.4);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
+            max-width: 650px;
+            margin: 60px auto;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 25px 70px rgba(74, 61, 48, 0.35);
+            border: 1px solid rgba(139, 115, 85, 0.25);
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+            color: #6b5d4f;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close:hover {
+            color: #4a3d30;
+            background: rgba(139, 115, 85, 0.15);
+            transform: rotate(90deg);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 22px;
+            color: #3d3229;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 18px;
+            margin-top: 35px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(74, 61, 48, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+        }
+
+        .footer p {
+            font-size: 1.02em;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 12px;
+            }
+            h1 {
+                font-size: 2em;
+                letter-spacing: 2px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .modal-content {
+                padding: 30px;
+                margin: 30px auto;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.04s; }
+        .card:nth-child(2) { animation-delay: 0.08s; }
+        .card:nth-child(3) { animation-delay: 0.12s; }
+        .card:nth-child(4) { animation-delay: 0.16s; }
+        .card:nth-child(5) { animation-delay: 0.2s; }
+        .card:nth-child(6) { animation-delay: 0.24s; }
+        .card:nth-child(7) { animation-delay: 0.28s; }
+        .card:nth-child(8) { animation-delay: 0.32s; }
+        .card:nth-child(9) { animation-delay: 0.36s; }
+        .card:nth-child(10) { animation-delay: 0.4s; }
+        .card:nth-child(11) { animation-delay: 0.44s; }
+        .card:nth-child(12) { animation-delay: 0.48s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>世界男性圖鑑2025</h1>
+            <p class="subtitle">2025冬季 ｜ 下船指南</p>
+        </header>
+
+        <div class="grid" id="card-grid"></div>
+
+        <div class="footer">
+            <p>此圖鑑僅供娛樂參考，請以輕鬆幽默的心情服用</p>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        const maleTypes = [
+            {
+                number: "No.001",
+                name: "畫餅男",
+                type: "夢想系",
+                description: "擅長描繪美好未來，承諾如同天邊的彩虹，看得到卻摸不著。",
+                details: "特徵：經常說「下次帶你去...」、「將來一定會...」，但行動力趨近於零。喜歡分享宏大計劃，但說出口後轉頭就忘，也鮮少有具體執行步驟。",
+                stats: {
+                    "承諾力": 95,
+                    "執行力": 15,
+                    "想像力": 98,
+                    "可信度": 20
+                }
+            },
+            {
+                number: "No.002",
+                name: "普信男",
+                type: "自信系",
+                description: "擁有與外在條件不成正比的自信心，高度掌握「說教」的技能。",
+                details: "特徵：常常高估自己的魅力值，認為所有女生都對他有意思。喜歡給予他人「建議」，尤其是沒人需要的那種。",
+                stats: {
+                    "自信心": 99,
+                    "自覺力": 10,
+                    "同理心": 25,
+                    "說教力": 95
+                }
+            },
+            {
+                number: "No.003",
+                name: "家暴男",
+                type: "危險系",
+                description: "情緒控管障礙，容易以暴力解決問題。⚠️ 請務必遠離！",
+                details: "特徵：無法控制情緒，習慣用言語或肢體暴力對待親密關係。如果遇到，請立即尋求協助，保護自己的安全。家暴專線：113",
+                stats: {
+                    "危險性": 100,
+                    "控制欲": 95,
+                    "同理心": 5,
+                    "改變力": 10
+                }
+            },
+            {
+                number: "No.004",
+                name: "媽寶男",
+                type: "依賴系",
+                description: "與母親有著無法切割的臍帶連結，生活缺乏自理能力。",
+                details: "特徵：「我媽說...」是他的口頭禪。人生大小事都要請示媽媽，甚至約會時間、伴侶人選也要媽媽認可。",
+                stats: {
+                    "獨立性": 15,
+                    "聽媽話": 99,
+                    "決斷力": 20,
+                    "成熟度": 25
+                }
+            },
+            {
+                number: "No.005",
+                name: "軟飯男",
+                type: "依附系",
+                description: "生活的藝術家，嘴甜、手軟，擅長依靠他人生活。",
+                details: "特徵：工作不穩定或乾脆不工作，習慣讓伴侶或家人負擔生活開銷。擅長說服自己「我還在追求夢想」。",
+                stats: {
+                    "經濟力": 10,
+                    "說服力": 80,
+                    "依賴性": 95,
+                    "責任感": 15
+                }
+            },
+            {
+                number: "No.006",
+                name: "洗衣機男",
+                type: "情感系",
+                description: "洗衣機一樣重複的情感模式，漂泊一生，沒有想安定下來。",
+                details: "特徵：先泡你，再糾纏不清，等妳上鉤，然後甩的一乾二淨，最後晾到一邊。",
+                stats: {
+                    "專一度": 10,
+                    "糾纏力": 90,
+                    "征服慾": 90,
+                    "情感力": 65
+                }
+            },
+            {
+                number: "No.007",
+                name: "醜男",
+                type: "外貌系",
+                description: "除了醜以外，沒別的缺點。",
+                details: "特徵：外在條件普通，內在修養也沒跟上。重點不是長相，而是缺乏自我提升的意願和品味的培養。",
+                stats: {
+                    "外貌值": 25,
+                    "內涵值": 30,
+                    "努力值": 20,
+                    "自信心": 40
+                }
+            },
+            {
+                number: "No.008",
+                name: "摳男",
+                type: "節儉系",
+                description: "斤斤計較，對自己摳、對別人更摳，每一分錢都要精打細算。",
+                details: "特徵：約會永遠 AA 制，甚至會計較到小數點，口頭禪：「這個CP值不高」。",
+                stats: {
+                    "慷慨度": 10,
+                    "計算力": 99,
+                    "浪漫值": 15,
+                    "存款數": 85
+                }
+            },
+            {
+                number: "No.009",
+                name: "水鬼男",
+                type: "拖累系",
+                description: "像水鬼一樣，自己過得一團糟，還要拉著別人一起下水。",
+                details: "特徵：生活習慣不佳，沒有上進心，還擅長使用PUA大法，影響伴侶的生活品質。",
+                stats: {
+                    "正能量": 10,
+                    "拖累力": 90,
+                    "上進心": 15,
+                    "影響力": 75
+                }
+            },
+            {
+                number: "No.010",
+                name: "屌思男",
+                type: "腦癱系",
+                description: "擅長夜店約砲、瞟女生，下半身Always Open 711。",
+                details: "特徵：缺乏道德觀，具有「我爽有什麼不可以」的心態，經常先使用下半身思考，事後再跪求道歉。",
+                stats: {
+                    "邊界感": 35,
+                    "性能力": 95,
+                    "同理心": 20,
+                    "道德感": 10
+                }
+            },
+            {
+                number: "No.011",
+                name: "中空男",
+                type: "溫暖系",
+                description: "不是上空也不是下空，是暖到讓人分不清界線的中央空調。",
+                details: "特徵：對誰都噓寒問暖，邊界感超低，經常給人曖昧的錯覺，實際上只是習慣性求關注的下頭男。",
+                stats: {
+                    "邊界感": 15,
+                    "親和力": 95,
+                    "專一度": 30,
+                    "曖昧值": 90
+                }
+            },
+            {
+                number: "No.012",
+                name: "父權男",
+                type: "傳統系",
+                description: "思考方式充滿大男人主義，活在100年前的世界觀裡。",
+                details: "特徵：思想保守，無法理解性別平等的概念，常把「父權」、「傳統美德」掛在嘴邊。",
+                stats: {
+                    "開明度": 15,
+                    "固執度": 95,
+                    "同理心": 20,
+                    "時代感": 10
+                }
+            }
+        ];
+
+        const grid = document.getElementById('card-grid');
+        const modal = document.getElementById('modal');
+        const modalBody = document.getElementById('modal-body');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        function createCard(data) {
+            return `
+                <div class="card" onclick="showDetails(${maleTypes.indexOf(data)})">
+                    <div class="card-number">${data.number}</div>
+                    <h2 class="card-title">${data.name}</h2>
+                    <span class="card-type">${data.type}</span>
+                    <p class="card-description">${data.description}</p>
+                    <div class="card-stats">
+                        ${Object.entries(data.stats).map(([name, value]) => `
+                            <div class="stat">
+                                <span class="stat-name">${name}</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: ${value}%"></div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function showDetails(index) {
+            const data = maleTypes[index];
+            modalBody.innerHTML = `
+                <div class="card-number">${data.number}</div>
+                <h2 class="card-title">${data.name}</h2>
+                <span class="card-type">${data.type}</span>
+                <p class="card-description" style="margin-top: 16px;">${data.description}</p>
+                <h3 style="color: #6b5d4f; margin-top: 24px; margin-bottom: 12px; font-size: 1.25em;">詳細說明</h3>
+                <p style="color: #5a4d3f; line-height: 1.85;">${data.details}</p>
+                <div class="card-stats" style="margin-top: 24px;">
+                    ${Object.entries(data.stats).map(([name, value]) => `
+                        <div class="stat">
+                            <span class="stat-name">${name}</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: ${value}%"></div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            modal.style.display = 'block';
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(e) {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // 渲染所有卡片
+        grid.innerHTML = maleTypes.map(createCard).join('');
+    </script>
+</body>
+</html>
+
